@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+$black: #000000;
+$white: #FDFDFD;
+$dark-grey: #2F2F2F;
+$light-blue: #4688F1;
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.logo__sm .logo--title {
+    font-size: 1.3rem;
+}
+
+.logo__sm .logo--subtitle {
+    font-size: .6rem;
+}
+
+.logo__md .logo--title {
+    font-size: 2.5rem;
+}
+
+.logo__md .logo--subtitle {
+    font-size: 1.2rem;
+}
+
+.logo__lg .logo--title {
+    color: $white;
+    font-size: 5rem;
+}
+
+.logo__lg .logo--subtitle {
+    color: $white;
+    font-size: 2.3rem;
+}
+
+.logo--title {
+    color: $black;
+    font-weight: 900;
+}
+
+.logo--subtitle {
+    color: $black;
+    font-weight: 500;
+}
+
+.floatNav {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 100;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floatNav__active .floatNavList {
+    opacity: 1;
+}
+
+.floatNavAction {
+    position: absolute;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, .2);
+    background-color: $white;
+    border-radius: 50%;
+
+    transition: box-shadow .2s linear;
+
+    cursor: pointer;
+}
+
+.floatNavAction:hover {
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, .2);
+}
+
+.floatNavList {
+    position: absolute;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity .2s linear;
+}
+
+.floatNavList__horizontal {
+    right: 50px;
+
+    flex-direction: row;
+}
+
+.floatNavList__horizontal .floatNavList--link {
+    margin-right: 10px;
+}
+
+.floatNavList__vertical {
+    bottom: 50px;
+
+    flex-direction: column;
+}
+
+.floatNavList__vertical .floatNavList--link {
+    margin-bottom: 10px;
+}
+
+.floatNavList--link {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $black;
+
+    box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, .2);
+    background-color: $white;
+    border-radius: 15px;
+
+    transition: box-shadow .2s linear;
+
+    cursor: pointer;
+}
+
+.error404 {
+    padding-left: 4%;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.error404--code {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.error404--info {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.error404--link {
+    margin-top: 10px;
+
+    color: $black;
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.primaryContainer {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.videoContainer {
+    // Implement responsive 100 height!!!
+
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoContainer--video {
+    // position: absolute;
+    // z-index: -1;
+
+    // width: 100%;
+    // height: auto;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -100;
+
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+
+    background: url('//demosthenes.info/assets/images/polina.jpg') center center no-repeat;
+    background-size: cover;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.videoContainer--info {
+    position: fixed;
+
+    padding: 20px 4%;
+}
+
+.scrollContainer {
+    position: absolute;
+    top: 87%;
+
+    padding: 20px 4%;
+    width: 100%;
+
+    background-color: $white;
+}
+
+.scrollContainer--brand {
+    position: absolute;
+    left: 25px;
+
+    width: 75px;
+    height: 70px;
+
+    display: none;
+}
+
+.scrollContainer--link {
+    text-decoration: none;
+}
+
+.scrollContainer--link p {
+    font-size: .8rem;
+
+    text-decoration: none;
+}
+
+.primaryNav {
+    margin-bottom: 30px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.primaryNavList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.primaryNavList--link {
+    margin: 10px 5px;
+
+    color: $black;
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+.primaryNavList--link__primary {
+    color: $black;
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.primaryNavList--link__secondary {
+    color: $black;
+    font-size: .7rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.grid {
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.grid__xs {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.grid__md {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid__lg {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+}
+
+.stuffCard {
+
+}
+
+.stuffCard--image {
+    width: auto;
+    height: 200px;
+}
+
+.stuffCard h6 {
+    height: 25px;
+
+    font-size: .9rem;
+}
+
+.stuffCard p {
+    overflow: hidden;
+
+    height: 50px;
+
+    font-size: .7rem;
+}
+
+.servicesCard {
+
+}
+
+.servicesCard--image {
+    width: 100%;
+    height: auto;
+}
+
+.servicesCard--link {
+    color: $black;
+    font-size: .7rem;
+    font-weight: 300;
+}
+
+.servicesCard h6 {
+    font-size: .9rem;
+}
+
+.servicesCard p {
+    font-size: .7rem;
+}
+
+.magazineContainer {
+    position: relative;
+}
+
+.magazineContainer--cover {
+    width: 100%;
+    height: 400px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.magazineContainer--content {
+    padding: 20px 4%;
+}
+
+.magazineContainer--imageContainer {
+    width: 100%;
+    height: 400px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.fullScreenContainer {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullScreenContainer .videoContainer--video {
+    display: none;
+}
+
+.loginContainer {
+    padding: 20px 4%;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: $white;
+}
+
+.loginForm {
+    margin-top: 15px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm--label {
+    margin-top: 10px;
+    padding-left: 3px;
+
+    color: $black;
+    font-size: .75rem;
+    font-weight: 300;
+}
+
+.loginForm--input {
+    margin-top: 5px;
+    padding: 12px 18px;
+
+    border: 1px solid $light-blue;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+.loginForm--link {
+    margin-top: 5px;
+    padding-left: 3px;
+
+    color: $light-blue;
+    font-size: .7rem;
+    font-weight: 300;
+}
+
+.loginForm--submit {
+    margin-top: 15px;
+    padding: 12px 18px;
+
+    color: $white;
+    font-size: .7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    background-color: $light-blue;
+    border: 1px solid $light-blue;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    transition: box-shadow .2s linear;
+
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 768px) {
+    .error404--code {
+        font-size: 6rem;
+    }
+    
+    .error404--info {
+        font-size: 2rem;
+    }
+    
+    .error404--link {
+        font-size: 1rem;
+    }
+
+    .scrollContainer {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .scrollContainer--brand {
+        display: flex;
+    }
+
+    .loginContainer {
+        padding: 40px 10px;
+        width: 400px;
+        height: auto;
+    
+        border-radius: 3px;
+
+        box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, .2);
+    }
+
+    .fullScreenContainer .videoContainer--video {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    
+}
