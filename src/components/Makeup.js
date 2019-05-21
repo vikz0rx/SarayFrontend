@@ -24,7 +24,7 @@ class Makeup extends React.Component {
                     <Text selector='H2' mt='40px' mb='10px' extrabold uppercase center black>{makeup.list.firstname} {makeup.list.lastname}</Text>
                     { makeup.list.is_staff ? <Text selector='H3' mb='10px' extrabold uppercase center darkgrey>Штатный работник</Text> : null }
                     <Text selector='P' mb='20px' center thin black>{makeup.list.bio}</Text>
-                    <div className='grid grid__lg'>
+                    <div className='grid grid__md'>
                         {
                             makeup.list.photos_set ?
                             makeup.list.photos_set.map((item, index) => (

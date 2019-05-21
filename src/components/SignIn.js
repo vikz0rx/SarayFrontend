@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
+import { getUser } from '../actions/signInActions';
 import FloatNav from '../containers/FloatNav';
 
 class SignIn extends React.Component {
@@ -13,13 +15,22 @@ class SignIn extends React.Component {
         };
         
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange (e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    handleSubmit (e) {
+        this.props.getUserAction(this.state.email, this.state.password);
+
+        event.preventDefault();
+    }
+
     render() {
+        const { user } = this.props
+
         return (
             <section className='fullScreenContainer'>
                 <FloatNav />
@@ -34,7 +45,7 @@ class SignIn extends React.Component {
                         <span className='logo--title'>SARAY</span>
                         <span className='logo--subtitle'>PHOTOSTUDIO</span>
                     </div>
-                    <form className='loginForm'>
+                    <form className='loginForm' onSubmit={this.handleSubmit}>
                         <label htmlFor='email' className='loginForm--label'>Электронная почта</label>
                         <input type='email' id='email' name='email' className='loginForm--input' onChange={this.handleChange} value={this.state.email} required />
 
@@ -52,4 +63,19 @@ class SignIn extends React.Component {
     }
 }
 
-export default SignIn;
+const mapStateToProps = store => {
+    return {
+        user: store.user,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getUserAction: (email, password) => dispatch(getUser(email, password)),
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SignIn);

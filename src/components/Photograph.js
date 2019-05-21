@@ -24,7 +24,7 @@ class Photograph extends React.Component {
                     <Text selector='H2' mt='40px' mb='10px' extrabold uppercase center black>{photograph.list.firstname} {photograph.list.lastname}</Text>
                     { photograph.list.is_staff ? <Text selector='H3' mb='10px' extrabold uppercase center darkgrey>Штатный фотограф</Text> : null }
                     <Text selector='P' mb='20px' center thin black>{photograph.list.bio}</Text>
-                    <div className='grid grid__lg'>
+                    <div className='grid grid__md'>
                         {
                             photograph.list.photos_set ?
                             photograph.list.photos_set.map((item, index) => (
